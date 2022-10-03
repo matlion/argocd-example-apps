@@ -13,6 +13,10 @@ spec:
       labels:
         app: guestbook-ui-2
     spec:
+      initContainers:
+        - name: wait-for-content-management-server
+          image: busybox:1.28.2
+          command: ['sh', '-c', 'sleep 30']
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         name: guestbook-ui
