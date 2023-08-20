@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod
+  namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: prod
+    server: https://kubernetes.default.svc
+  project: prod
+  source:
+    path: helm-guestbook
+    repoURL: https://github.com/matlion/argocd-example-apps.git
+    targetRevision: HEAD
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod2
+  namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: prod
+    server: https://kubernetes.default.svc
+  project: prod
+  source:
+    path: helm-guestbook2
+    repoURL: https://github.com/matlion/argocd-example-apps.git
+    targetRevision: HEAD
+
