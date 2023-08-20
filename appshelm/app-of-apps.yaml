@@ -9,7 +9,7 @@ spec:
     repoURL: 'https://github.com/matlion/argocd-example-apps.git'
     targetRevision: main
   destination:
-    namespace: prod
+    namespace: default
     server: 'https://kubernetes.default.svc'
   project: prod
   syncPolicy:

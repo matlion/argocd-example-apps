@@ -16,6 +16,9 @@ spec:
     path: helm-guestbook
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -35,4 +38,6 @@ spec:
     path: helm-guestbook2
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
-
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
