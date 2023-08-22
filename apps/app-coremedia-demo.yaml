@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: coremedia-demo
+    path: coremedia-demo/mgmt
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
 
