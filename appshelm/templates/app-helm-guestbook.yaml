@@ -16,16 +16,6 @@ spec:
     path: helm-guestbook
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    retry:
-      limit: 5
-      backoff:
-        duration: 5s
-        maxDuration: 3m0s
-        factor: 2
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -45,13 +35,3 @@ spec:
     path: helm-guestbook2
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    retry:
-      limit: 5
-      backoff:
-        duration: 5s
-        maxDuration: 3m0s
-        factor: 2
