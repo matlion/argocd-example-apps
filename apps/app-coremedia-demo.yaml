@@ -10,8 +10,27 @@ spec:
     namespace: cmcc
     server: https://kubernetes.default.svc
   project: default
-  source:
-    path: coremedia-demo/mgmt
+  sources:
+  - path: coremedia/content-management-server
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
-
+  - path: coremedia/studio-server
+    repoURL: https://github.com/matlion/argocd-example-apps.git
+    targetRevision: HEAD
+  - path: coremedia/cae-preview
+    repoURL: https://github.com/matlion/argocd-example-apps.git
+    targetRevision: HEAD
+  - path: coremedia/cae-live
+    repoURL: https://github.com/matlion/argocd-example-apps.git
+    targetRevision: HEAD
+    helm:
+      releaseName: cae-live-1
+      valueFiles:
+        - repl-1.yaml
+  - path: coremedia/cae-live
+    repoURL: https://github.com/matlion/argocd-example-apps.git
+    targetRevision: HEAD
+    helm:
+      releaseName: cae-live-2
+      valueFiles:
+        - repl-2.yaml
