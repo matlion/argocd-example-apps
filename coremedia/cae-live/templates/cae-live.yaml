@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cae1
+  name: {{ .Release.Name }}
   labels:
-    app: cae1
+    app: {{ .Release.Name }}
     chart: {{ template "helm-guestbook.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -14,12 +14,12 @@ spec:
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: cae1
+      app: {{ .Release.Name }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: cae1
+        app: {{ .Release.Name }}
         release: {{ .Release.Name }}
     spec:
       initContainers:
