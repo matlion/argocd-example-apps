@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rls1
+  name: {{ .Release.Name }}
   labels:
-    app: rls1
+    app: {{ .Release.Name }}
     chart: {{ template "helm-guestbook.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: rls1
+      app: {{ .Release.Name }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: rls1
+        app: {{ .Release.Name }}
         release: {{ .Release.Name }}
     spec:
       initContainers:
