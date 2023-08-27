@@ -11,15 +11,27 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   sources:
+  - repoURL: https://github.com/matlion/argocd-example-apps.git
+    targetRevision: HEAD
+    ref: common
   - path: coremedia/content-management-server
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - $common/coremedia/common/global.yaml
   - path: coremedia/studio-server
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - $common/coremedia/common/global.yaml
   - path: coremedia/cae-preview
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - $common/coremedia/common/global.yaml
   - path: coremedia/cae-live
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
@@ -27,6 +39,7 @@ spec:
       releaseName: cae-live-1
       valueFiles:
         - repl-1.yaml
+        - $common/coremedia/common/global.yaml
   - path: coremedia/cae-live
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
@@ -34,3 +47,4 @@ spec:
       releaseName: cae-live-2
       valueFiles:
         - repl-2.yaml
+        - $common/coremedia/common/global.yaml
