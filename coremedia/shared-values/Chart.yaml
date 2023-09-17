@@ -1,0 +1,6 @@
+apiVersion: v2
+name: shared-values
+description: Shared values for all charts
+type: application
+version: 0.1.0
+appVersion: "1.0"
