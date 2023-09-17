@@ -38,8 +38,8 @@ spec:
     helm:
       releaseName: cae-live-1
       valueFiles:
-        - repl-1.yaml
         - $common/coremedia/common/global.yaml
+        - repl-1.yaml
   - path: coremedia/cae-live
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
