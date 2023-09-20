@@ -7,11 +7,8 @@ spec:
   source:
     path: appshelm
     repoURL: 'https://github.com/matlion/argocd-example-apps.git'
-    targetRevision: main
+    targetRevision: HEAD
   destination:
     namespace: default
     server: 'https://kubernetes.default.svc'
   project: prod
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
