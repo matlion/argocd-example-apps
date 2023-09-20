@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cm-demo2
+  name: content-management-server
   namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
