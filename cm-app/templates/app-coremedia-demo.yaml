@@ -23,3 +23,10 @@ spec:
       valueFiles:
         - $common/cm-app-versions/global.yaml
         - $common/cm-app-versions/dev-versions.yaml
+  - path: coremedia/studio-server
+    repoURL: https://github.com/matlion/argocd-example-apps.git
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - $common/cm-app-versions/global.yaml
+        - $common/cm-app-versions/dev-versions.yaml
