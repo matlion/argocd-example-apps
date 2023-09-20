@@ -1,4 +1,4 @@
 content-management-server:
   imagetag: '0.1'
 studio-server:
-  imagetag: '0.1'
+  imagetag: '0.2'
