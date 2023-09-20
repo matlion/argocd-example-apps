@@ -1,4 +1,4 @@
 content-management-server:
-  imagetag: '1.23'
+  imagetag: '1.25'
 studio-server:
-  imagetag: '1.24'
+  imagetag: '1.25'
