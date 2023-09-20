@@ -21,4 +21,5 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
+        - $common/cm-app-versions/global.yaml
         - $common/cm-app-versions/dev-versions.yaml
