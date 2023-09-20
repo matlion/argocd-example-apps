@@ -1,2 +1,4 @@
-content-management-server: '1.2'
-studio-server: '1.2'
+content-management-server:
+  imagetag: '1.2'
+studio-server:
+  imagetag: '1.2'
