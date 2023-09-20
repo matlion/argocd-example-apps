@@ -23,9 +23,8 @@ spec:
         release: {{ .Release.Name }}
     spec:
       containers:
-        {{- $servicevalues := get .Values .Release.Name }}
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ $servicevalues.imagetag }}"
+          image: "{{ .Values.image.repository }}:{{ include "get-version" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http

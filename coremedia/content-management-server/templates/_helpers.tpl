@@ -30,3 +30,11 @@ Create chart name and version as used by the chart label.
 {{- define "helm-guestbook.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+
+{{- define "get-version" -}}
+ 123
+ {{- $servicevalues := get .Values .Release.Name | toString }}
+ # {{- printf "%sxx%s" $servicevalues .Release.Name -}}
+{{/* {{- $servicevalues.imagetag -}}*/}}
+{{- end -}}
