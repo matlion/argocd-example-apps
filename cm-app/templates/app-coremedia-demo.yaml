@@ -5,8 +5,6 @@ metadata:
   namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: "gcr.io/heptio-images/ks-guestbook-demo"
 spec:
   destination:
     namespace: cmcc
@@ -31,8 +29,6 @@ metadata:
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: "gcr.io/heptio-images/ks-guestbook-demo"
 spec:
   destination:
     namespace: cmcc
