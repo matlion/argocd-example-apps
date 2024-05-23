@@ -41,5 +41,5 @@ affinity: {}
 
 image:
   repository: nginx
-  tag: "otel"
+  tag: "1"
 
