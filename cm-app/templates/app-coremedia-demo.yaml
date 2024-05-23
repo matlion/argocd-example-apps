@@ -20,7 +20,7 @@ spec:
     helm:
       valueFiles:
         - $common/cm-app-versions/global.yaml
-        - $common/cm-app-versions/dev-versions.yaml
+        - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -44,4 +44,22 @@ spec:
       helm:
         valueFiles:
           - $common/cm-app-versions/global.yaml
-          - $common/cm-app-versions/dev-versions.yaml
+          - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
+
+    - path: coremedia/cae-live
+      repoURL: https://github.com/matlion/argocd-example-apps.git
+      targetRevision: HEAD
+      helm:
+        releaseName: cae-live-1
+        valueFiles:
+          - $common/cm-app-versions/global.yaml
+          - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
+
+    - path: coremedia/cae-live
+      repoURL: https://github.com/matlion/argocd-example-apps.git
+      targetRevision: HEAD
+      helm:
+        releaseName: cae-live-2
+        valueFiles:
+          - $common/cm-app-versions/global.yaml
+          - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
