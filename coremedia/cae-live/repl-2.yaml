@@ -3,6 +3,3 @@
 # Declare variables to be passed into your templates.
 
 wave: 2
-
-image:
-  tag: 1
