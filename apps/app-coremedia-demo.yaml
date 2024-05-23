@@ -12,39 +12,44 @@ spec:
   project: default
   sources:
   - repoURL: https://github.com/matlion/argocd-example-apps.git
-    targetRevision: HEAD
+    targetRevision: master
     ref: common
   - path: coremedia/content-management-server
     repoURL: https://github.com/matlion/argocd-example-apps.git
-    targetRevision: HEAD
+    targetRevision: master
     helm:
       valueFiles:
         - $common/coremedia/common/global.yaml
+        - $common/coremedia/common/dev-versions.yaml
   - path: coremedia/studio-server
     repoURL: https://github.com/matlion/argocd-example-apps.git
-    targetRevision: HEAD
+    targetRevision: master
     helm:
       valueFiles:
         - $common/coremedia/common/global.yaml
+        - $common/coremedia/common/dev-versions.yaml
   - path: coremedia/cae-preview
     repoURL: https://github.com/matlion/argocd-example-apps.git
-    targetRevision: HEAD
+    targetRevision: master
     helm:
       valueFiles:
         - $common/coremedia/common/global.yaml
+        - $common/coremedia/common/dev-versions.yaml
   - path: coremedia/cae-live
     repoURL: https://github.com/matlion/argocd-example-apps.git
-    targetRevision: HEAD
+    targetRevision: master
     helm:
       releaseName: cae-live-1
       valueFiles:
         - $common/coremedia/common/global.yaml
+        - $common/coremedia/common/dev-versions.yaml
         - repl-1.yaml
   - path: coremedia/cae-live
     repoURL: https://github.com/matlion/argocd-example-apps.git
-    targetRevision: HEAD
+    targetRevision: master
     helm:
       releaseName: cae-live-2
       valueFiles:
         - repl-2.yaml
+        - $common/coremedia/common/dev-versions.yaml
         - $common/coremedia/common/global.yaml
