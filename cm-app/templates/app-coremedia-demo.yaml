@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: content-management-server
-  namespace: cmcc
+  namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -31,7 +31,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: default
+    namespace: cmcc
     server: https://kubernetes.default.svc
   project: default
   sources:
