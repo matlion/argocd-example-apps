@@ -52,6 +52,8 @@ kind: Application
 metadata:
   name: cae-live-1
   namespace: default
+  labels:
+    type: cm
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -80,6 +82,8 @@ kind: Application
 metadata:
   name: cae-live-2
   namespace: default
+  labels:
+    type: cm
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
