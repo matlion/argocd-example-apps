@@ -71,6 +71,7 @@ spec:
         releaseName: cae-live-1
         valueFiles:
           - $common/cm-app-versions/global.yaml
+          - repl-1.yaml
           - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
 
 ---
@@ -98,4 +99,5 @@ spec:
         releaseName: cae-live-2
         valueFiles:
           - $common/cm-app-versions/global.yaml
+          - repl-2.yaml
           - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
