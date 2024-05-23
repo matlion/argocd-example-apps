@@ -46,6 +46,24 @@ spec:
           - $common/cm-app-versions/global.yaml
           - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
 
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cae-live-1
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: cmcc
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+    - repoURL: https://github.com/matlion/argocd-example-apps.git
+      targetRevision: HEAD
+      ref: common
+
     - path: coremedia/cae-live
       repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
@@ -54,6 +72,24 @@ spec:
         valueFiles:
           - $common/cm-app-versions/global.yaml
           - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cae-live-2
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: cmcc
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+    - repoURL: https://github.com/matlion/argocd-example-apps.git
+      targetRevision: HEAD
+      ref: common
 
     - path: coremedia/cae-live
       repoURL: https://github.com/matlion/argocd-example-apps.git
