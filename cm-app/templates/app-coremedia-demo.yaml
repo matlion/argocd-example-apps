@@ -61,6 +61,10 @@ spec:
     namespace: cmcc
     server: https://kubernetes.default.svc
   project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
@@ -91,6 +95,10 @@ spec:
     namespace: cmcc
     server: https://kubernetes.default.svc
   project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
