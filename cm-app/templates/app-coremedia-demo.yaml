@@ -14,8 +14,6 @@ spec:
     namespace: cmcc
     server: https://kubernetes.default.svc
   project: cmcc
-  syncPolicy:
-    automated:
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
@@ -48,8 +46,6 @@ spec:
     namespace: cmcc
     server: https://kubernetes.default.svc
   project: cmcc
-  syncPolicy:
-    automated:
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
