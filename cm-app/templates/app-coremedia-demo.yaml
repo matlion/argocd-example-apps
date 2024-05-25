@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: content-management-server
-  namespace: default
+  namespace: cmcc
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   finalizers:
@@ -28,7 +28,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: studio-server
-  namespace: default
+  namespace: cmcc
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   finalizers:
@@ -55,7 +55,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cae-live-1
-  namespace: default
+  namespace: cmcc
   annotations:
     argocd.argoproj.io/sync-wave: "1"
   labels:
@@ -87,7 +87,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cae-live-2
-  namespace: default
+  namespace: cmcc
   annotations:
     argocd.argoproj.io/sync-wave: "2"
   labels:
