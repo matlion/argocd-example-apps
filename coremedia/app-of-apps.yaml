@@ -15,4 +15,4 @@ spec:
   destination:
     namespace: cmcc
     server: 'https://kubernetes.default.svc'
-  project: default
+  project: cmcc
