@@ -1,59 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: content-management-server
-  namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    namespace: cmcc
-    server: https://kubernetes.default.svc
-  project: cmcc
-  sources:
-  - repoURL: https://github.com/matlion/argocd-example-apps.git
-    targetRevision: HEAD
-    ref: common
-  - path: coremedia/content-management-server
-    repoURL: https://github.com/matlion/argocd-example-apps.git
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - $common/cm-app-versions/global.yaml
-        - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: studio-server
-  namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    namespace: cmcc
-    server: https://kubernetes.default.svc
-  project: cmcc
-  sources:
-    - repoURL: https://github.com/matlion/argocd-example-apps.git
-      targetRevision: HEAD
-      ref: common
-    - path: coremedia/studio-server
-      repoURL: https://github.com/matlion/argocd-example-apps.git
-      targetRevision: HEAD
-      helm:
-        valueFiles:
-          - $common/cm-app-versions/global.yaml
-          - $common/cm-app-versions/{{ .Values.env }}-versions.yaml
-
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
   name: app-1
   namespace: argocd
   annotations:
