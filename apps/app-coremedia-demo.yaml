@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cm-demo
-  namespace: default
+  namespace: cmcc
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:

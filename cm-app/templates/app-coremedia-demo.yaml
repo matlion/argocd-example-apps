@@ -2,14 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: content-management-server
-  namespace: default
+  namespace: cmcc
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: default
+    namespace: cmcc
     server: https://kubernetes.default.svc
   project: default
   sources:
@@ -28,16 +28,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: studio-server
-  namespace: default
+  namespace: cmcc
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: default
+    namespace: cmcc
     server: https://kubernetes.default.svc
-  project: default
+  project: cmcc
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
@@ -55,7 +55,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cae-live-1
-  namespace: default
+  namespace: cmcc
   annotations:
     argocd.argoproj.io/sync-wave: "1"
   labels:
@@ -64,7 +64,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: default
+    namespace: cmcc
     server: https://kubernetes.default.svc
   project: default
   sources:
@@ -87,7 +87,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cae-live-2
-  namespace: default
+  namespace: cmcc
   annotations:
     argocd.argoproj.io/sync-wave: "2"
   labels:
@@ -96,7 +96,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: default
+    namespace: cmcc
     server: https://kubernetes.default.svc
   project: default
   sources:
