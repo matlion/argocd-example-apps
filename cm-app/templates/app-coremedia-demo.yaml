@@ -58,6 +58,7 @@ metadata:
   namespace: default
   annotations:
     argocd.argoproj.io/sync-wave: "1"
+    random: cm
   labels:
     type: cm
   finalizers:
@@ -90,6 +91,7 @@ metadata:
   namespace: default
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+    random: cm
   labels:
     type: cm
   finalizers:
