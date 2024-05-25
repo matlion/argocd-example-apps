@@ -9,9 +9,9 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cmcc
+    namespace: default
     server: https://kubernetes.default.svc
-  project: cmcc
+  project: default
   sources:
   - repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: HEAD
@@ -35,9 +35,9 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cmcc
+    namespace: default
     server: https://kubernetes.default.svc
-  project: cmcc
+  project: default
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
@@ -64,9 +64,9 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cmcc
+    namespace: default
     server: https://kubernetes.default.svc
-  project: cmcc
+  project: default
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
@@ -96,9 +96,9 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cmcc
+    namespace: default
     server: https://kubernetes.default.svc
-  project: cmcc
+  project: default
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD

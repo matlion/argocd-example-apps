@@ -2,14 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cm-demo
-  namespace: cmcc
+  namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: cmcc
+    namespace: default
     server: https://kubernetes.default.svc
-  project: cmcc
+  project: default
   sources:
   - repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: master
