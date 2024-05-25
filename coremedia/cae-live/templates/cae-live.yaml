@@ -8,8 +8,6 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     type: cae-live
-  annotations:
-    argocd.argoproj.io/sync-wave: "{{ .Values.wave }}"
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3

@@ -7,8 +7,6 @@ metadata:
     chart: {{ template "helm-guestbook.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 3
