@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: content-management-server
-  namespace: defaul
+  namespace: default
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   finalizers:
@@ -64,7 +64,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: defaul
+    namespace: default
     server: https://kubernetes.default.svc
   project: default
   sources:
@@ -87,7 +87,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cae-live-2
-  namespace: defaul
+  namespace: default
   annotations:
     argocd.argoproj.io/sync-wave: "2"
   labels:
@@ -96,7 +96,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: defaul
+    namespace: default
     server: https://kubernetes.default.svc
   project: default
   sources:
