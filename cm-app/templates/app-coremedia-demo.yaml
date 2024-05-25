@@ -54,7 +54,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cae-live-1
+  name: app-1
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "1"
@@ -76,7 +76,7 @@ spec:
       repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
       helm:
-        releaseName: cae-live-1
+        releaseName: app-1
         valueFiles:
           - $common/cm-app-versions/global.yaml
           - repl-1.yaml
@@ -86,7 +86,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cae-live-2
+  name: app-2
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "2"
@@ -108,7 +108,7 @@ spec:
       repoURL: https://github.com/matlion/argocd-example-apps.git
       targetRevision: HEAD
       helm:
-        releaseName: cae-live-2
+        releaseName: app-2
         valueFiles:
           - $common/cm-app-versions/global.yaml
           - repl-2.yaml
