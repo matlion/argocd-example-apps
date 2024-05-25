@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: cmcc
     server: https://kubernetes.default.svc
-  project: default
+  project: cmcc
   sources:
   - repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: master
