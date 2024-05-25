@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: coremedia
-  namespace: cmcc
+  namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
   finalizers:
@@ -13,6 +13,6 @@ spec:
     repoURL: 'https://github.com/matlion/argocd-example-apps.git'
     targetRevision: master
   destination:
-    namespace: cmcc
+    namespace: argocd
     server: 'https://kubernetes.default.svc'
-  project: cmcc
+  project: default
