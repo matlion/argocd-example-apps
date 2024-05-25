@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: content-management-server
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -31,6 +33,8 @@ kind: Application
 metadata:
   name: studio-server
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -60,6 +64,8 @@ kind: Application
 metadata:
   name: cae-live-1
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     type: cm
   finalizers:
@@ -94,6 +100,8 @@ kind: Application
 metadata:
   name: cae-live-2
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     type: cm
   finalizers:
