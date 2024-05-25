@@ -39,7 +39,7 @@ spec:
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: master
     helm:
-      releaseName: cae-live-1
+      releaseName: app-1
       valueFiles:
         - $common/coremedia/common/global.yaml
         - $common/coremedia/common/dev-versions.yaml
@@ -48,7 +48,7 @@ spec:
     repoURL: https://github.com/matlion/argocd-example-apps.git
     targetRevision: master
     helm:
-      releaseName: cae-live-2
+      releaseName: app-2
       valueFiles:
         - repl-2.yaml
         - $common/coremedia/common/dev-versions.yaml
