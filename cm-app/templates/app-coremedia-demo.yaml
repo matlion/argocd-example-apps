@@ -69,12 +69,12 @@ spec:
   project: default
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
-      targetRevision: HEAD
+      targetRevision: master
       ref: common
 
     - path: coremedia/cae-live
       repoURL: https://github.com/matlion/argocd-example-apps.git
-      targetRevision: HEAD
+      targetRevision: master
       helm:
         releaseName: cae-live-1
         valueFiles:
@@ -101,12 +101,12 @@ spec:
   project: default
   sources:
     - repoURL: https://github.com/matlion/argocd-example-apps.git
-      targetRevision: HEAD
+      targetRevision: master
       ref: common
 
     - path: coremedia/cae-live
       repoURL: https://github.com/matlion/argocd-example-apps.git
-      targetRevision: HEAD
+      targetRevision: master
       helm:
         releaseName: cae-live-2
         valueFiles:
